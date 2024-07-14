@@ -1,0 +1,6 @@
+output.json
+output/*
+backup
+.vscode
+__pycache__
+seminar.jpg

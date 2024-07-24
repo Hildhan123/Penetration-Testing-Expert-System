@@ -33,9 +33,9 @@ def horizontalBar(data):
                  color_discrete_map=colors)
    
     fig.update_layout(
-        title_text=f'Total Serangan Ditemukan: {total_serangan}',
+        title_text=f'Total Attacks found: {total_serangan}',
         title_x=0.5,
-        xaxis_title='Total Serangan'
+        xaxis_title='Total Attacks'
     )
     st.plotly_chart(fig)
 

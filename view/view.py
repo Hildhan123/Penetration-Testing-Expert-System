@@ -23,9 +23,9 @@ def render_app():
         unsafe_allow_html=True,
     )
 
-    st.title("Sistem Pakar Prediksi Serangan pada Website")
+    st.title("Expert System for Predicting Attacks on Websites")
 
-    url = st.text_input("Masukkan URL yang akan di-scan:", "http://test.com")
+    url = st.text_input("Enter the URL to be scanned:", "http://test.com")
 
     if st.button("Submit"):
         st.write(f'Starting penetration test for target: {url}')
@@ -70,7 +70,7 @@ def scanSum(url,start,end):
 
 def details(data):
     st.subheader("Details", divider='rainbow')
-    with st.expander("Klik untuk secara detail"):
+    with st.expander("Click for details"):
         for i, detail in enumerate(data, start=1):
             st.write("-----------------------------------------")
             st.write(f"{i}.")

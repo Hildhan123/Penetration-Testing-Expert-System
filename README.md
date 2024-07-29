@@ -20,7 +20,6 @@ Application for testing your website using penetration testing.
 ## Optional feature (Confidentiality, Integrity, Availability (CIA) Classification)
 1. Run your database and import sql database from ../DB/deteksiserangan.sql
 2. Uncomment this code fom ../handler/dashboard.sql
-   ![image](https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582)
    <img src="https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582" width="500px">
 4. restart your application
 
@@ -32,5 +31,5 @@ Application for testing your website using penetration testing.
 ## Big note
 - To reduce your scanning time, change Owasp Zap scanning setting
 - Actually you can test my scanning application before installing Owasp Zap. Just uncomment/comment my code from ../view/view.py
-  ![image](https://github.com/user-attachments/assets/fe5c304e-c887-44ca-ad16-86f986613b22 | width=100)
+  <img src="https://github.com/user-attachments/assets/fe5c304e-c887-44ca-ad16-86f986613b22" width="500px">
 

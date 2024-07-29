@@ -11,7 +11,11 @@ from handler.indekskor import determine_score, indekskor
 def dashboard(data):
     horizontalBar(data)
     pieChart(data)
-    # verticalBar(data) //OPTIONAL
+# OPTIONAL
+# ======================================================================
+# MUST RUN AND IMPORT THE DATABASE 'deteksiserangan.sql' in DB FOLDER
+    # verticalBar(data)
+# ======================================================================
     score(data)
 
 def horizontalBar(data):
@@ -60,57 +64,53 @@ def pieChart(data):
                  hover_name='Attack', hover_data={'Risk': True},color_discrete_sequence=px.colors.qualitative.Plotly)
     st.plotly_chart(fig)
 
-# OPTIONAL
-# MUST RUN AND IMPORT THE DATABASE 'deteksiserangan.sql' in DB FOLDER
-#
-# def verticalBar(data):
-#     st.subheader("CIA Clasification", divider='rainbow')
+def verticalBar(data):
+    st.subheader("CIA Clasification", divider='rainbow')
 
-#     data = klasifikasi_iso_27001(data)
-#     serangan_grouped = {}
-#     for category in ['Confidentiality', 'Integrity', 'Availability']:
-#         alerts = data.get(category, [])
-#         unique_alerts = {alert['alert']: 0 for alert in alerts}
-#         serangan_grouped[category] = list(unique_alerts.keys())
+    data = klasifikasi_iso_27001(data)
+    serangan_grouped = {}
+    for category in ['Confidentiality', 'Integrity', 'Availability']:
+        alerts = data.get(category, [])
+        unique_alerts = {alert['alert']: 0 for alert in alerts}
+        serangan_grouped[category] = list(unique_alerts.keys())
 
-#     trace_list = []
-#     x = ['Confidentiality', 'Integrity', 'Availability']
-#     color_palette = px.colors.qualitative.Plotly
-#     color_index = 0
+    trace_list = []
+    x = ['Confidentiality', 'Integrity', 'Availability']
+    color_palette = px.colors.qualitative.Plotly
+    color_index = 0
 
-#     total_confidentiality = 0
-#     total_integrity = 0
-#     total_availability = 0
+    total_confidentiality = 0
+    total_integrity = 0
+    total_availability = 0
 
-#     for category in ['Confidentiality', 'Integrity', 'Availability']:
-#         for alert_name in serangan_grouped[category]:
-#             total_serangan = [
-#                 len([item for item in data["Confidentiality"] if item['alert'] == alert_name]),
-#                 len([item for item in data['Integrity'] if item['alert'] == alert_name]),
-#                 len([item for item in data['Availability'] if item['alert'] == alert_name])
-#             ]
+    for category in ['Confidentiality', 'Integrity', 'Availability']:
+        for alert_name in serangan_grouped[category]:
+            total_serangan = [
+                len([item for item in data["Confidentiality"] if item['alert'] == alert_name]),
+                len([item for item in data['Integrity'] if item['alert'] == alert_name]),
+                len([item for item in data['Availability'] if item['alert'] == alert_name])
+            ]
 
-#             total_confidentiality += total_serangan[0]
-#             total_integrity += total_serangan[1]
-#             total_availability += total_serangan[2]
+            total_confidentiality += total_serangan[0]
+            total_integrity += total_serangan[1]
+            total_availability += total_serangan[2]
 
-#             trace = go.Bar(
-#                 name=alert_name,
-#                 x=x,
-#                 y=total_serangan,
-#                 hoverinfo='text+name',
-#             )
-#             trace_list.append(trace)
+            trace = go.Bar(
+                name=alert_name,
+                x=x,
+                y=total_serangan,
+                hoverinfo='text+name',
+            )
+            trace_list.append(trace)
 
-#     layout = go.Layout(
-#         barmode='stack',
-#         xaxis=dict(title='CIA Classification'),
-#         yaxis=dict(title='Total Serangan')
-#     )
+    layout = go.Layout(
+        barmode='stack',
+        xaxis=dict(title='CIA Classification'),
+        yaxis=dict(title='Total Serangan')
+    )
 
-#     fig = go.Figure(data=trace_list, layout=layout)
-#     st.plotly_chart(fig)
-#     st.caption("Confidentiality adalah kerentanan serangan terhadap kerahasiaan. Integrity adalah kerentanan serangan terhadap integritas. Availability adalah kerentanan serangan terhadap ketersediaan")
+    fig = go.Figure(data=trace_list, layout=layout)
+    st.plotly_chart(fig)
 
 def score(data):
     st.subheader("Overall Score", divider='rainbow')

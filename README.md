@@ -1,5 +1,7 @@
 ## Expert System for penetration testing 
 Application for testing your website using penetration testing. 
+![2024-07-29 10-29-16 - Trim](https://github.com/user-attachments/assets/e085bc10-a84a-4e80-921b-87854de3e1bd)
+
 
 ## Tools and Libraries Used
 - OWASP Zap
@@ -12,14 +14,15 @@ Application for testing your website using penetration testing.
 - Etc
 
 ## Tutorial
-1. Clone this repository and install its requirement
-2. Download and install OWASP Zap
+1. Clone this repository and install it's requirements
+2. Download and install OWASP Zap [https://www.zaproxy.org/download/]
 3. Copy API from OWASP Zap setting and paste it to ../handler/pentest.py
 4. run application by 'python -m streamlit run app.py'
 
 ## Optional feature (Confidentiality, Integrity, Availability (CIA) Classification)
-1. Run your database and import sql database from ../DB/deteksiserangan.sql
+1. Create database with name 'deteksiserangan' and import sql database from ../DB/deteksiserangan.sql
 2. Uncomment this code fom ../handler/dashboard.sql
+   <br>
    <img src="https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582" width="500px">
 4. restart your application
 
@@ -31,5 +34,6 @@ Application for testing your website using penetration testing.
 ## Big note
 - To reduce your scanning time, change Owasp Zap scanning setting
 - Actually you can test my scanning application before installing Owasp Zap. Just uncomment/comment my code from ../view/view.py
+  <br>
   <img src="https://github.com/user-attachments/assets/fe5c304e-c887-44ca-ad16-86f986613b22" width="500px">
 

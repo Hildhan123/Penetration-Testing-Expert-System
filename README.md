@@ -21,7 +21,7 @@ Application for testing your website using penetration testing.
 1. Run your database and import sql database from ../DB/deteksiserangan.sql
 2. Uncomment this code fom ../handler/dashboard.sql
    ![image](https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582)
-   <img src="https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582" width="100px">
+   <img src="https://github.com/user-attachments/assets/2c18df66-0355-4178-82f1-3a64fbaa9582" width="500px">
 4. restart your application
 
 ## Tested
